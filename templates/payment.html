@@ -2,20 +2,72 @@
 <html>
 <head>
     <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-form {
+            width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .payment-form input[type="text"], .payment-form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .payment-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff6347;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .payment-form input[type="submit"]:hover {
+            background-color: #ee4c30;
+        }
+
+        .payment-options {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <form action="/process_payment" method="post">
-        <label for="upi_id">UPI ID:</label><br>
-        <input type="text" id="upi_id" name="upi_id"><br>
-        <label for="bitcoin_address">Bitcoin Address:</label><br>
-        <input type="text" id="bitcoin_address" name="bitcoin_address"><br>
-        <label for="amount">Donation Amount:</label><br>
-        <input type="number" id="amount" name="amount"><br>
+    <form class="payment-form" action="/process_payment" method="post">
+        <label for="upi_id">UPI ID:</label>
+        <input type="text" id="upi_id" name="upi_id">
+        <label for="bitcoin_address">Bitcoin Address:</label>
+        <input type="text" id="bitcoin_address" name="bitcoin_address">
+        <label for="amount">Donation Amount:</label>
+        <input type="number" id="amount" name="amount">
         <input type="submit" value="Submit">
     </form>
 
-    <h2>Our Payment Options</h2>
-    <p>Bitcoin Address: 1BoatSLRHtKNngkdXEeobR76b53LETtpy</p>
-    <p>UPI ID: 987645911@paytm</p>
+    <div class="payment-options">
+        <h2>Our Payment Options</h2>
+        <p>Bitcoin Address: 1BoatSLRHtKNngkdXEeobR76b53LETtpy</p>
+        <p>UPI ID: 987645911@paytm</p>
+    </div>
 </body>
 </html>
